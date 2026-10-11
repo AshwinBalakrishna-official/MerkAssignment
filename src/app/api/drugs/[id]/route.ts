@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getDrug } from "@/lib/drugs/repository";
-import { simulateLatency } from "@/lib/api/latency";
+// import { simulateLatency } from "@/lib/api/latency";
 
 /** GET /api/drugs/:id */
 export async function GET(
@@ -8,7 +8,8 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> },
 ) {
   const { id } = await params;
-  await simulateLatency();
+  //Enable this to mock latency. I am disabling it for now.
+  // await simulateLatency(); 
   const drug = await getDrug(id);
   if (!drug) {
     return NextResponse.json({ error: "Drug not found" }, { status: 404 });

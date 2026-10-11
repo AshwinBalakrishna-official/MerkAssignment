@@ -53,20 +53,20 @@ describe("SearchBar", () => {
     expect(replace).not.toHaveBeenCalled();
     act(() => { vi.advanceTimersByTime(SEARCH_DEBOUNCE_MS); });
     expect(replace).toHaveBeenCalledTimes(1);
-    expect(replace).toHaveBeenCalledWith("/?q=glu");
+    expect(replace).toHaveBeenCalledWith("/?drugName=glu");
     vi.useRealTimers();
   });
 
   it("updates status immediately and resets the page", () => {
-    params = new URLSearchParams("q=a&page=3");
+    params = new URLSearchParams("drugName=a&page=3");
     render(<SearchBar />);
     fireEvent.change(screen.getByLabelText("Filter by status"), { target: { value: "Approved" } });
-    expect(replace).toHaveBeenCalledWith("/?q=a&status=Approved");
+    expect(replace).toHaveBeenCalledWith("/?drugName=a&status=Approved");
   });
 
   it("clears the param when the search is emptied", () => {
     vi.useFakeTimers();
-    params = new URLSearchParams("q=abc");
+    params = new URLSearchParams("drugName=abc");
     render(<SearchBar />);
     fireEvent.change(screen.getByLabelText("Search drugs by name"), { target: { value: "" } });
     act(() => { vi.advanceTimersByTime(SEARCH_DEBOUNCE_MS); });

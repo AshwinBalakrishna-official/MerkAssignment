@@ -36,7 +36,7 @@ export interface Paginated<T> {
 
 export interface ListDrugsParams {
   /** Case-insensitive substring match on name. */
-  q?: string;
+  drugName?: string;
   status?: DrugStatus;
   page?: number;
   limit?: number;

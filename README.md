@@ -45,7 +45,7 @@ src/
                   <Name>.api.ts holding its fetcher), DrugCard, SearchBar (client),
                   StatusBadge, Pagination
   lib/drugs/      types.ts, repository.ts (data access; swap for a DB here)
-  lib/api/        endpoints.ts (all API paths), http.ts (URL helpers), latency.ts
+  lib/api/        endpoints.ts (base URL + all API paths), latency.ts
   lib/docs/       openapi.ts (spec), flag.ts (docs on/off switch)
   data/drugs.json mock data
 __tests__/        repository, API route, and component tests
@@ -54,7 +54,7 @@ __tests__/        repository, API route, and component tests
 ### API
 Interactive docs (Swagger UI): **http://localhost:3000/api-docs** (loads UI assets from a CDN, so needs internet). **Enabled in development, disabled (404) in production** by default; set `ENABLE_API_DOCS=true` to expose it on a deployment (e.g. for the walkthrough) or `false` to hide it anywhere. Raw OpenAPI spec: `/api/openapi.json`, defined in `src/lib/docs/openapi.ts`.
 
-- `GET /api/drugs?q=<name>&status=<In Development|Approved|Discontinued|Withdrawn>&page=<n>&limit=<1-100>`
+- `GET /api/drugs?drugName=<name>&status=<In Development|Approved|Discontinued|Withdrawn>&page=<n>&limit=<1-100>`
   → `{ items: DrugSummary[], page, limit, total, totalPages }`. Invalid `status` → `400`. Out-of-range `page`/`limit` are clamped.
 - `GET /api/drugs/:id` → full `Drug`, or `404 { error }`.
 

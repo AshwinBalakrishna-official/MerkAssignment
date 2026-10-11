@@ -14,7 +14,7 @@ export function SearchBar() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get("q") ?? "");
+  const [query, setQuery] = useState(searchParams.get("drugName") ?? "");
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // Always read the latest params so a status change isn't clobbered by a stale debounce.
@@ -23,7 +23,7 @@ export function SearchBar() {
     paramsRef.current = searchParams;
   }, [searchParams]);
 
-  function update(key: "q" | "status", value: string) {
+  function update(key: "drugName" | "status", value: string) {
     const next = new URLSearchParams(paramsRef.current.toString());
     if (value) next.set(key, value);
     else next.delete(key);
@@ -46,7 +46,7 @@ export function SearchBar() {
           onChange={(e) => {
             setQuery(e.target.value);
             clearTimeout(timer.current);
-            timer.current = setTimeout(() => update("q", e.target.value.trim()), SEARCH_DEBOUNCE_MS);
+            timer.current = setTimeout(() => update("drugName", e.target.value.trim()), SEARCH_DEBOUNCE_MS);
           }}
           className="w-full rounded-md border border-zinc-300 bg-transparent px-3 py-2 dark:border-zinc-700"
         />

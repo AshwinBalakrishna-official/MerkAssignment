@@ -12,8 +12,8 @@ describe("GET /api/drugs", () => {
     expect(body.items).toHaveLength(2);
   });
 
-  it("applies q and status", async () => {
-    const body = await (await list(req("?q=cardio&status=Approved"))).json();
+  it("applies drugName and status", async () => {
+    const body = await (await list(req("?drugName=cardio&status=Approved"))).json();
     expect(body.items.map((d: { name: string }) => d.name)).toEqual(["Cardiorex"]);
   });
 

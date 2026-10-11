@@ -32,11 +32,11 @@ const clampInt = (value: number | undefined, min: number, max: number, fallback:
 export async function listDrugs(
   params: ListDrugsParams = {},
 ): Promise<Paginated<DrugSummary>> {
-  const q = params.q?.trim().toLowerCase();
+  const drugName = params.drugName?.trim().toLowerCase();
   const limit = clampInt(params.limit, 1, MAX_LIMIT, DEFAULT_LIMIT);
 
   const matches = drugs
-    .filter((d) => (!q || d.name.toLowerCase().includes(q)) && (!params.status || d.status === params.status))
+    .filter((d) => (!drugName || d.name.toLowerCase().includes(drugName)) && (!params.status || d.status === params.status))
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const total = matches.length;

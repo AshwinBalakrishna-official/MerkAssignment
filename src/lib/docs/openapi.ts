@@ -59,7 +59,7 @@ export const openApiSpec = {
         summary: "List drug candidates",
         description: "Server-side search, filter and pagination. Results are sorted by name; out-of-range page/limit are clamped.",
         parameters: [
-          { name: "q", in: "query", description: "Case-insensitive substring match on name", schema: { type: "string" } },
+          { name: "drugName", in: "query", description: "Case-insensitive substring match on name", schema: { type: "string" } },
           { name: "status", in: "query", schema: statusSchema },
           { name: "page", in: "query", schema: { type: "integer", minimum: 1, default: 1 } },
           { name: "limit", in: "query", schema: { type: "integer", minimum: 1, maximum: MAX_LIMIT, default: DEFAULT_LIMIT } },

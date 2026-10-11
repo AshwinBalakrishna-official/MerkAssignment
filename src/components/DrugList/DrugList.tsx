@@ -10,18 +10,18 @@ export async function DrugList({ searchParams }: Pick<PageProps<"/">, "searchPar
   const sp = await searchParams;
   const first = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
-  const q = first(sp.q)?.trim() || undefined;
+  const drugName = first(sp.drugName)?.trim() || undefined;
   const statusParam = first(sp.status);
   const status = DRUG_STATUSES.includes(statusParam as DrugStatus)
     ? (statusParam as DrugStatus)
     : undefined;
   const page = Number(first(sp.page)) || 1;
 
-  const result = await fetchDrugs({ q, status, page });
+  const result = await fetchDrugs({ drugName, status, page });
 
   const hrefFor = (p: number) => {
     const params = new URLSearchParams();
-    if (q) params.set("q", q);
+    if (drugName) params.set("drugName", drugName);
     if (status) params.set("status", status);
     if (p > 1) params.set("page", String(p));
     const qs = params.toString();

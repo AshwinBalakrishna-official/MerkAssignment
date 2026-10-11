@@ -14,7 +14,7 @@ describe("listDrugs", () => {
   });
 
   it("searches names case-insensitively", async () => {
-    const r = await listDrugs({ q: "  GLUC " });
+    const r = await listDrugs({ drugName: "  GLUC " });
     expect(r.items.map((d) => d.name)).toEqual(["Glucora"]);
   });
 
@@ -25,7 +25,7 @@ describe("listDrugs", () => {
   });
 
   it("combines search and status", async () => {
-    expect((await listDrugs({ q: "glucora", status: "Withdrawn" })).total).toBe(0);
+    expect((await listDrugs({ drugName: "glucora", status: "Withdrawn" })).total).toBe(0);
   });
 
   it("clamps page and limit", async () => {
@@ -36,7 +36,7 @@ describe("listDrugs", () => {
   });
 
   it("returns an empty page for no matches", async () => {
-    const r = await listDrugs({ q: "zzzz" });
+    const r = await listDrugs({ drugName: "zzzz" });
     expect(r.items).toEqual([]);
     expect(r.total).toBe(0);
     expect(r.totalPages).toBe(1);
