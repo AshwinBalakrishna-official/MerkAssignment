@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { DRUG_STATUSES, type DrugStatus } from "@/lib/drugs/types";
+import { EmptyState, Grid, Heading, Page, Stack, Text } from "@/design-system";
 import { DrugCard } from "@/components/DrugCard";
 import { Pagination } from "@/components/Pagination";
 import { SearchBar } from "@/components/SearchBar";
@@ -29,33 +30,33 @@ export async function DrugList({ searchParams }: Pick<PageProps<"/">, "searchPar
   };
 
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 space-y-6 px-4 py-10">
-      <header>
-        <h1 className="text-3xl font-bold">Drug Candidates</h1>
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Browse, search and filter the drug pipeline. (Fictional demo data.)
-        </p>
-      </header>
+    <Page size="lg">
+      <Stack gap="lg">
+        <Stack as="header" gap="xs">
+          <Heading level={1}>Drug Candidates</Heading>
+          <Text tone="muted">Browse, search and filter the drug pipeline. (Fictional demo data.)</Text>
+        </Stack>
 
-      <Suspense>
-        <SearchBar />
-      </Suspense>
+        <Suspense>
+          <SearchBar />
+        </Suspense>
 
-      <p aria-live="polite" className="text-sm text-zinc-600 dark:text-zinc-400">
-        {result.total} {result.total === 1 ? "result" : "results"}
-      </p>
+        <Text tone="muted" size="sm" aria-live="polite">
+          {result.total} {result.total === 1 ? "result" : "results"}
+        </Text>
 
-      {result.items.length === 0 ? (
-        <p className="rounded-lg border border-dashed p-8 text-center">No drug candidates match your search.</p>
-      ) : (
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {result.items.map((d) => (
-            <DrugCard key={d.id} drug={d} />
-          ))}
-        </ul>
-      )}
+        {result.items.length === 0 ? (
+          <EmptyState>No drug candidates match your search.</EmptyState>
+        ) : (
+          <Grid as="ul" cols={3}>
+            {result.items.map((d) => (
+              <DrugCard key={d.id} drug={d} />
+            ))}
+          </Grid>
+        )}
 
-      <Pagination page={result.page} totalPages={result.totalPages} hrefFor={hrefFor} />
-    </main>
+        <Pagination page={result.page} totalPages={result.totalPages} hrefFor={hrefFor} />
+      </Stack>
+    </Page>
   );
 }

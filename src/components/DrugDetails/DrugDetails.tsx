@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BulletList, Cluster, Fact, Grid, Heading, Page, Stack, Text, TextLink } from "@/design-system";
 import { notFound } from "next/navigation";
 import { StatusBadge } from "@/components/StatusBadge";
 import { fetchDrug } from "./DrugDetails.api";
@@ -17,35 +17,34 @@ export async function DrugDetails({ params }: Pick<PageProps<"/drugs/[id]">, "pa
   ];
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 space-y-6 px-4 py-10">
-      <Link href="/" className="text-sm text-blue-600 hover:underline dark:text-blue-400">← Back to all candidates</Link>
+    <Page size="md">
+      <Stack gap="lg">
+        <div>
+          <TextLink href="/">← Back to all candidates</TextLink>
+        </div>
 
-      <header className="flex flex-wrap items-center gap-3">
-        <h1 className="text-3xl font-bold">{drug.name}</h1>
-        <StatusBadge status={drug.status} />
-      </header>
-      <p>{drug.description}</p>
+        <Cluster gap="md">
+          <Heading level={1}>{drug.name}</Heading>
+          <StatusBadge status={drug.status} />
+        </Cluster>
+        <Text>{drug.description}</Text>
 
-      <dl className="grid gap-4 sm:grid-cols-2">
-        {facts.map(([label, value]) => (
-          <div key={label} className="rounded-lg border border-zinc-200 p-4 dark:border-zinc-800">
-            <dt className="text-xs uppercase tracking-wide text-zinc-500">{label}</dt>
-            <dd className="font-medium">{value}</dd>
-          </div>
-        ))}
-      </dl>
+        <Grid as="dl" cols={2}>
+          {facts.map(([label, value]) => (
+            <Fact key={label} label={label} value={value} />
+          ))}
+        </Grid>
 
-      <section>
-        <h2 className="mb-1 text-xl font-semibold">Mechanism of Action</h2>
-        <p>{drug.mechanismOfAction}</p>
-      </section>
+        <Stack as="section" gap="xs">
+          <Heading level={2}>Mechanism of Action</Heading>
+          <Text>{drug.mechanismOfAction}</Text>
+        </Stack>
 
-      <section>
-        <h2 className="mb-1 text-xl font-semibold">Side Effects</h2>
-        <ul className="list-disc pl-5">
-          {drug.sideEffects.map((s) => <li key={s}>{s}</li>)}
-        </ul>
-      </section>
-    </main>
+        <Stack as="section" gap="xs">
+          <Heading level={2}>Side Effects</Heading>
+          <BulletList items={drug.sideEffects} />
+        </Stack>
+      </Stack>
+    </Page>
   );
 }

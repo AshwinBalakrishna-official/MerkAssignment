@@ -41,6 +41,8 @@ Browser ──> Server components (page.tsx, drugs/[id]/page.tsx)
 ```
 src/
   app/            routes: pages, loading/error/not-found, api/drugs route handlers
+  design-system/  all styling (Tailwind) lives here: Page, Stack, Cluster, Grid, Heading,
+                  Text, Card, Badge, TextInput, Select, Button, ... (one folder each)
   components/     one folder per component: DrugList, DrugDetails (each with a
                   <Name>.api.ts holding its fetcher), DrugCard, SearchBar (client),
                   StatusBadge, Pagination
@@ -59,6 +61,7 @@ Interactive docs (Swagger UI): **http://localhost:3000/api-docs** (loads UI asse
 - `GET /api/drugs/:id` → full `Drug`, or `404 { error }`.
 
 ## Design decisions
+- **Design system owns all styling.** Feature components and pages (`src/components`, `src/app`) contain no `className`/`style`; they compose `src/design-system` components, and an ESLint rule enforces this. Tailwind is used inside the design system only, so swapping the styling technology (e.g. to CSS-in-TS or shadow-DOM isolation for a micro-frontend) touches one folder.
 - **URL is the state.** Search, status and page live in the query string, so views are shareable, bookmarkable and back-button friendly. `SearchBar` is the only client component needed for state; everything else renders on the server, keeping client JS small.
 - **Built for large data.** Filtering and pagination happen server-side; the list endpoint returns lightweight summaries (no mechanism/side-effects), so payload size depends on page size, not dataset size. `limit` is capped at 100.
 - **Repository boundary.** `lib/drugs/repository.ts` is the only code that knows about the JSON file. Replacing it with a database/search service (same two functions) requires no UI or route changes. The UI talks to the API via `fetch`, so pointing `API_BASE_URL` at a real backend also works.
