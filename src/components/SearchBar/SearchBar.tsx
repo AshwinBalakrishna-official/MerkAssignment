@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Cluster, Select, TextInput } from "@/design-system";
 import { DRUG_STATUSES } from "@/lib/drugs/types";
+
+const STATUS_OPTIONS = [
+  { value: "", label: "All statuses" },
+  ...DRUG_STATUSES.map((s) => ({ value: s, label: s })),
+];
 
 export const SEARCH_DEBOUNCE_MS = 300;
 
@@ -35,36 +41,25 @@ export function SearchBar() {
   useEffect(() => () => clearTimeout(timer.current), []);
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row" role="search">
-      <div className="flex-1">
-        <label htmlFor="search" className="sr-only">Search drugs by name</label>
-        <input
-          id="search"
-          type="search"
-          value={query}
-          placeholder="Search by name…"
-          onChange={(e) => {
-            setQuery(e.target.value);
-            clearTimeout(timer.current);
-            timer.current = setTimeout(() => update("drugName", e.target.value.trim()), SEARCH_DEBOUNCE_MS);
-          }}
-          className="w-full rounded-md border border-zinc-300 bg-transparent px-3 py-2 dark:border-zinc-700"
-        />
-      </div>
-      <div>
-        <label htmlFor="status" className="sr-only">Filter by status</label>
-        <select
-          id="status"
-          value={searchParams.get("status") ?? ""}
-          onChange={(e) => update("status", e.target.value)}
-          className="w-full rounded-md border border-zinc-300 bg-transparent px-3 py-2 dark:border-zinc-700 dark:[&>option]:bg-zinc-900"
-        >
-          <option value="">All statuses</option>
-          {DRUG_STATUSES.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
-      </div>
-    </div>
+    <Cluster collapse gap="md" role="search">
+      <TextInput
+        grow
+        type="search"
+        label="Search drugs by name"
+        placeholder="Search by name…"
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          clearTimeout(timer.current);
+          timer.current = setTimeout(() => update("drugName", e.target.value.trim()), SEARCH_DEBOUNCE_MS);
+        }}
+      />
+      <Select
+        label="Filter by status"
+        value={searchParams.get("status") ?? ""}
+        onChange={(e) => update("status", e.target.value)}
+        options={STATUS_OPTIONS}
+      />
+    </Cluster>
   );
 }
