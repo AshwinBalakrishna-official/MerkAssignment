@@ -1,0 +1,468 @@
+[
+  {
+    "id": "lumivastat",
+    "name": "Lumivastat",
+    "status": "In Development",
+    "description": "Oral PCSK9 inhibitor intended to lower LDL cholesterol in statin-intolerant patients.",
+    "mechanismOfAction": "Binds PCSK9 and prevents it from degrading LDL receptors, increasing hepatic LDL clearance.",
+    "sideEffects": [
+      "Nasopharyngitis",
+      "Fatigue",
+      "Mild transaminase elevation"
+    ],
+    "indication": "Hypercholesterolemia",
+    "developer": "Meridian Therapeutics",
+    "phase": "Phase 3",
+    "approvalDate": null
+  },
+  {
+    "id": "cardiorex",
+    "name": "Cardiorex",
+    "status": "Approved",
+    "description": "Reduces hospitalisation in chronic heart failure with reduced ejection fraction.",
+    "mechanismOfAction": "Inhibits neprilysin and blocks the angiotensin II type 1 receptor, promoting vasodilation and natriuresis.",
+    "sideEffects": [
+      "Hypotension",
+      "Hyperkalemia",
+      "Dizziness",
+      "Cough"
+    ],
+    "indication": "Heart failure",
+    "developer": "Halden Pharma",
+    "phase": "Marketed",
+    "approvalDate": "2019-03-14"
+  },
+  {
+    "id": "neurovane",
+    "name": "Neurovane",
+    "status": "In Development",
+    "description": "Anti-amyloid antibody candidate aimed at slowing early cognitive decline.",
+    "mechanismOfAction": "Monoclonal antibody that targets aggregated amyloid-beta plaques for microglial clearance.",
+    "sideEffects": [
+      "Infusion reactions",
+      "Headache",
+      "Amyloid-related imaging abnormalities"
+    ],
+    "indication": "Alzheimer's disease",
+    "developer": "Aster Neuroscience",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "oncolytix",
+    "name": "Oncolytix",
+    "status": "In Development",
+    "description": "Engineered oncolytic virus designed to selectively replicate in tumour cells.",
+    "mechanismOfAction": "Infects and lyses cancer cells while expressing GM-CSF to recruit an anti-tumour immune response.",
+    "sideEffects": [
+      "Fever",
+      "Chills",
+      "Injection-site pain"
+    ],
+    "indication": "Solid tumours",
+    "developer": "Corvid Biosciences",
+    "phase": "Phase 1",
+    "approvalDate": null
+  },
+  {
+    "id": "glucora",
+    "name": "Glucora",
+    "status": "Approved",
+    "description": "Once-weekly GLP-1 receptor agonist for glycaemic control.",
+    "mechanismOfAction": "Activates GLP-1 receptors to enhance glucose-dependent insulin secretion and slow gastric emptying.",
+    "sideEffects": [
+      "Nausea",
+      "Diarrhoea",
+      "Vomiting",
+      "Decreased appetite"
+    ],
+    "indication": "Type 2 diabetes",
+    "developer": "Halden Pharma",
+    "phase": "Marketed",
+    "approvalDate": "2017-09-28"
+  },
+  {
+    "id": "pulmoclear",
+    "name": "Pulmoclear",
+    "status": "In Development",
+    "description": "Inhaled anti-fibrotic to slow lung function decline.",
+    "mechanismOfAction": "Inhibits autotaxin, reducing lysophosphatidic acid signalling that drives fibroblast activation.",
+    "sideEffects": [
+      "Cough",
+      "Throat irritation",
+      "Diarrhoea"
+    ],
+    "indication": "Idiopathic pulmonary fibrosis",
+    "developer": "Breva Respiratory",
+    "phase": "Phase 3",
+    "approvalDate": null
+  },
+  {
+    "id": "dermacil",
+    "name": "Dermacil",
+    "status": "Approved",
+    "description": "Targeted biologic that reduces itch and skin inflammation.",
+    "mechanismOfAction": "Blocks IL-4 and IL-13 signalling by binding the IL-4 receptor alpha subunit.",
+    "sideEffects": [
+      "Conjunctivitis",
+      "Injection-site reactions",
+      "Oral herpes"
+    ],
+    "indication": "Moderate-to-severe atopic dermatitis",
+    "developer": "Solace Dermatology",
+    "phase": "Marketed",
+    "approvalDate": "2020-06-02"
+  },
+  {
+    "id": "retinova",
+    "name": "Retinova",
+    "status": "In Development",
+    "description": "Intravitreal complement inhibitor for dry age-related macular degeneration.",
+    "mechanismOfAction": "Inhibits complement component C3 to limit retinal cell damage from complement overactivation.",
+    "sideEffects": [
+      "Eye discomfort",
+      "Intraocular pressure increase",
+      "Vitreous floaters"
+    ],
+    "indication": "Geographic atrophy",
+    "developer": "Aster Neuroscience",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "hepatiguard",
+    "name": "Hepatiguard",
+    "status": "Discontinued",
+    "description": "Development stopped after interim analysis failed to meet histology endpoints.",
+    "mechanismOfAction": "Agonist of FXR nuclear receptor regulating bile-acid and lipid metabolism.",
+    "sideEffects": [
+      "Pruritus",
+      "Increased LDL cholesterol",
+      "Fatigue"
+    ],
+    "indication": "Non-alcoholic steatohepatitis",
+    "developer": "Corvid Biosciences",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "immunora",
+    "name": "Immunora",
+    "status": "In Development",
+    "description": "Oral selective JAK1 inhibitor with a once-daily regimen.",
+    "mechanismOfAction": "Selectively inhibits Janus kinase 1, dampening cytokine-driven inflammatory signalling.",
+    "sideEffects": [
+      "Upper respiratory infection",
+      "Headache",
+      "Raised creatine kinase"
+    ],
+    "indication": "Rheumatoid arthritis",
+    "developer": "Meridian Therapeutics",
+    "phase": "Phase 3",
+    "approvalDate": null
+  },
+  {
+    "id": "painex",
+    "name": "Painex",
+    "status": "Withdrawn",
+    "description": "Withdrawn from market following post-marketing cardiovascular safety signals.",
+    "mechanismOfAction": "Selective COX-2 inhibitor reducing prostaglandin-mediated pain and inflammation.",
+    "sideEffects": [
+      "Myocardial infarction",
+      "Stroke",
+      "Hypertension"
+    ],
+    "indication": "Chronic pain",
+    "developer": "Brightwell Labs",
+    "phase": "Marketed",
+    "approvalDate": "2008-05-20"
+  },
+  {
+    "id": "antiviron",
+    "name": "Antiviron",
+    "status": "Approved",
+    "description": "Single-dose antiviral that shortens the duration of influenza symptoms.",
+    "mechanismOfAction": "Inhibits cap-dependent endonuclease of the influenza polymerase, blocking viral mRNA synthesis.",
+    "sideEffects": [
+      "Diarrhoea",
+      "Bronchitis",
+      "Nausea"
+    ],
+    "indication": "Influenza",
+    "developer": "Solace Dermatology",
+    "phase": "Marketed",
+    "approvalDate": "2018-10-24"
+  },
+  {
+    "id": "thrombisol",
+    "name": "Thrombisol",
+    "status": "In Development",
+    "description": "Factor XI inhibitor with a lower expected bleeding risk than current anticoagulants.",
+    "mechanismOfAction": "Antisense/antibody inhibition of coagulation factor XI to reduce thrombin generation.",
+    "sideEffects": [
+      "Bruising",
+      "Minor bleeding",
+      "Anaemia"
+    ],
+    "indication": "Venous thromboembolism",
+    "developer": "Halden Pharma",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "osteoforte",
+    "name": "Osteoforte",
+    "status": "Approved",
+    "description": "Bone-forming agent that reduces vertebral fracture risk.",
+    "mechanismOfAction": "Binds sclerostin, increasing bone formation and decreasing bone resorption.",
+    "sideEffects": [
+      "Arthralgia",
+      "Headache",
+      "Injection-site reactions"
+    ],
+    "indication": "Postmenopausal osteoporosis",
+    "developer": "Breva Respiratory",
+    "phase": "Marketed",
+    "approvalDate": "2019-04-09"
+  },
+  {
+    "id": "psychelle",
+    "name": "Psychelle",
+    "status": "In Development",
+    "description": "Rapid-acting oral antidepressant candidate.",
+    "mechanismOfAction": "NMDA receptor modulator that enhances synaptic plasticity in prefrontal circuits.",
+    "sideEffects": [
+      "Dissociation",
+      "Dizziness",
+      "Nausea",
+      "Transient blood-pressure rise"
+    ],
+    "indication": "Treatment-resistant depression",
+    "developer": "Aster Neuroscience",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "oncoshield",
+    "name": "Oncoshield",
+    "status": "Approved",
+    "description": "Targeted therapy for EGFR-mutated lung cancer.",
+    "mechanismOfAction": "Irreversibly inhibits mutant EGFR tyrosine kinase, blocking proliferative signalling.",
+    "sideEffects": [
+      "Rash",
+      "Diarrhoea",
+      "Paronychia",
+      "Dry skin"
+    ],
+    "indication": "Non-small cell lung cancer",
+    "developer": "Corvid Biosciences",
+    "phase": "Marketed",
+    "approvalDate": "2016-11-02"
+  },
+  {
+    "id": "nephrovia",
+    "name": "Nephrovia",
+    "status": "In Development",
+    "description": "Slows kidney function decline in patients with proteinuric CKD.",
+    "mechanismOfAction": "Dual endothelin and angiotensin receptor antagonist reducing glomerular pressure.",
+    "sideEffects": [
+      "Fluid retention",
+      "Anaemia",
+      "Hypotension"
+    ],
+    "indication": "Chronic kidney disease",
+    "developer": "Meridian Therapeutics",
+    "phase": "Phase 3",
+    "approvalDate": null
+  },
+  {
+    "id": "sleepwell",
+    "name": "Sleepwell",
+    "status": "Approved",
+    "description": "Dual orexin receptor antagonist for sleep onset and maintenance.",
+    "mechanismOfAction": "Blocks orexin A and B receptors to suppress wake-promoting signalling.",
+    "sideEffects": [
+      "Somnolence",
+      "Headache",
+      "Abnormal dreams"
+    ],
+    "indication": "Insomnia",
+    "developer": "Brightwell Labs",
+    "phase": "Marketed",
+    "approvalDate": "2014-08-13"
+  },
+  {
+    "id": "vaxigen-7",
+    "name": "Vaxigen-7",
+    "status": "In Development",
+    "description": "mRNA vaccine candidate for adults over 60.",
+    "mechanismOfAction": "Lipid nanoparticle delivers mRNA encoding the prefusion F protein to elicit neutralising antibodies.",
+    "sideEffects": [
+      "Injection-site pain",
+      "Fatigue",
+      "Myalgia"
+    ],
+    "indication": "Respiratory syncytial virus",
+    "developer": "Corvid Biosciences",
+    "phase": "Phase 1",
+    "approvalDate": null
+  },
+  {
+    "id": "cutaneva",
+    "name": "Cutaneva",
+    "status": "Discontinued",
+    "description": "Topical candidate halted due to formulation instability.",
+    "mechanismOfAction": "Topical PDE4 inhibitor reducing pro-inflammatory cytokine production in skin.",
+    "sideEffects": [
+      "Application-site burning",
+      "Erythema"
+    ],
+    "indication": "Plaque psoriasis",
+    "developer": "Solace Dermatology",
+    "phase": "Phase 1",
+    "approvalDate": null
+  },
+  {
+    "id": "gastrozen",
+    "name": "Gastrozen",
+    "status": "Approved",
+    "description": "Potassium-competitive acid blocker for erosive oesophagitis.",
+    "mechanismOfAction": "Competitively blocks the potassium binding site of H+/K+ ATPase in gastric parietal cells.",
+    "sideEffects": [
+      "Diarrhoea",
+      "Nausea",
+      "Elevated gastrin"
+    ],
+    "indication": "Gastro-oesophageal reflux disease",
+    "developer": "Brightwell Labs",
+    "phase": "Marketed",
+    "approvalDate": "2015-12-01"
+  },
+  {
+    "id": "hemostabil",
+    "name": "Hemostabil",
+    "status": "In Development",
+    "description": "Subcutaneous prophylaxis that mimics factor VIII activity.",
+    "mechanismOfAction": "Bispecific antibody bridging activated factor IX and factor X to restore coagulation.",
+    "sideEffects": [
+      "Injection-site reactions",
+      "Headache",
+      "Arthralgia"
+    ],
+    "indication": "Haemophilia A",
+    "developer": "Breva Respiratory",
+    "phase": "Phase 3",
+    "approvalDate": null
+  },
+  {
+    "id": "myoreviv",
+    "name": "Myoreviv",
+    "status": "In Development",
+    "description": "Gene therapy delivering a micro-dystrophin transgene.",
+    "mechanismOfAction": "AAV vector delivers a shortened functional dystrophin gene to muscle cells.",
+    "sideEffects": [
+      "Vomiting",
+      "Nausea",
+      "Elevated liver enzymes"
+    ],
+    "indication": "Duchenne muscular dystrophy",
+    "developer": "Halden Pharma",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "allergeaze",
+    "name": "Allergeaze",
+    "status": "Approved",
+    "description": "Non-sedating antihistamine nasal spray.",
+    "mechanismOfAction": "Selective histamine H1 receptor antagonist acting locally in the nasal mucosa.",
+    "sideEffects": [
+      "Bitter taste",
+      "Nasal irritation",
+      "Epistaxis"
+    ],
+    "indication": "Seasonal allergic rhinitis",
+    "developer": "Solace Dermatology",
+    "phase": "Marketed",
+    "approvalDate": "2012-04-17"
+  },
+  {
+    "id": "lymphotrap",
+    "name": "Lymphotrap",
+    "status": "In Development",
+    "description": "CD19-directed CAR-T cell therapy candidate.",
+    "mechanismOfAction": "Autologous T cells engineered with a chimeric antigen receptor that targets CD19 on B cells.",
+    "sideEffects": [
+      "Cytokine release syndrome",
+      "Neurotoxicity",
+      "Cytopenias"
+    ],
+    "indication": "Relapsed B-cell lymphoma",
+    "developer": "Corvid Biosciences",
+    "phase": "Phase 2",
+    "approvalDate": null
+  },
+  {
+    "id": "thyrobal",
+    "name": "Thyrobal",
+    "status": "Approved",
+    "description": "Synthetic levothyroxine formulation with improved dose consistency.",
+    "mechanismOfAction": "Replaces thyroxine (T4), converted to T3 to restore normal metabolic regulation.",
+    "sideEffects": [
+      "Palpitations",
+      "Weight loss",
+      "Insomnia"
+    ],
+    "indication": "Hypothyroidism",
+    "developer": "Meridian Therapeutics",
+    "phase": "Marketed",
+    "approvalDate": "2005-07-11"
+  },
+  {
+    "id": "migraxa",
+    "name": "Migraxa",
+    "status": "In Development",
+    "description": "Monthly CGRP receptor antibody for episodic migraine.",
+    "mechanismOfAction": "Blocks the CGRP receptor, preventing trigeminovascular pain signalling.",
+    "sideEffects": [
+      "Constipation",
+      "Injection-site reactions",
+      "Hypertension"
+    ],
+    "indication": "Migraine prevention",
+    "developer": "Aster Neuroscience",
+    "phase": "Phase 3",
+    "approvalDate": null
+  },
+  {
+    "id": "cysticlear",
+    "name": "Cysticlear",
+    "status": "Approved",
+    "description": "Triple-combination CFTR modulator.",
+    "mechanismOfAction": "Corrects folding and potentiates channel gating of defective CFTR protein.",
+    "sideEffects": [
+      "Headache",
+      "Upper respiratory infection",
+      "Raised liver enzymes"
+    ],
+    "indication": "Cystic fibrosis",
+    "developer": "Breva Respiratory",
+    "phase": "Marketed",
+    "approvalDate": "2019-10-21"
+  },
+  {
+    "id": "ophtalex",
+    "name": "Ophtalex",
+    "status": "In Development",
+    "description": "Sustained-release intracameral implant lowering intraocular pressure.",
+    "mechanismOfAction": "Prostaglandin analogue increasing uveoscleral aqueous outflow.",
+    "sideEffects": [
+      "Conjunctival hyperaemia",
+      "Eye irritation"
+    ],
+    "indication": "Glaucoma",
+    "developer": "Halden Pharma",
+    "phase": "Phase 1",
+    "approvalDate": null
+  }
+]
